@@ -1,11 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import { TrialApplicationForm } from 'components'
 
-class App extends Component {
-  render() {
-    return <TrialApplicationForm />
-  }
-}
+const App = () => <TrialApplicationForm />
 
 export default App
