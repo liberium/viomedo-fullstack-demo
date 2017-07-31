@@ -7,7 +7,7 @@ import { TrialApplicationForm } from 'containers'
 
 const App = () =>
   <Provider store={store}>
-    <TrialApplicationForm />
+    <TrialApplicationForm onSubmit={values => console.log(values)} />
   </Provider>
 
 export default App
