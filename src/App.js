@@ -1,7 +1,13 @@
 import React from 'react'
+import { Provider } from 'react-redux'
 
-import { TrialApplicationForm } from 'components'
+import store from 'store'
 
-const App = () => <TrialApplicationForm />
+import { TrialApplicationForm } from 'containers'
+
+const App = () =>
+  <Provider store={store}>
+    <TrialApplicationForm />
+  </Provider>
 
 export default App
