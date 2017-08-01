@@ -1,18 +1,35 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 
+import { Form, FormGroup } from 'components'
+
 const TrialApplicationForm = ({ handleSubmit }) =>
-  <form onSubmit={handleSubmit}>
-    <Field name="firstName" component="input" type="text" />
-    <Field name="lastName" component="input" type="text" />
-    <Field name="email" component="input" type="text" />
-    <Field name="gender" component="input" type="text" />
-    <Field name="age" component="input" type="text" />
-    <Field name="phone" component="input" type="text" />
-    <Field name="zip" component="input" type="text" />
-    <Field name="termsAccepted" component="input" type="checkbox" />
+  <Form onSubmit={handleSubmit}>
+    <Field
+      name="firstName"
+      label="First Name"
+      type="text"
+      component={FormGroup}
+    />
+    <Field
+      name="lastName"
+      label="Last Name"
+      type="text"
+      component={FormGroup}
+    />
+    <Field name="email" label="Email" type="text" component={FormGroup} />
+    <Field name="gender" label="Gender" type="text" component={FormGroup} />
+    <Field name="age" label="Age" type="text" component={FormGroup} />
+    <Field name="phone" label="Phone" type="text" component={FormGroup} />
+    <Field name="zip" label="Zip Code" type="text" component={FormGroup} />
+    <Field
+      name="termsAccepted"
+      label="I accept the terms of use."
+      type="checkbox"
+      component={FormGroup}
+    />
     <button type="submit">Submit</button>
-  </form>
+  </Form>
 
 export default reduxForm({
   form: 'trialApplication',
