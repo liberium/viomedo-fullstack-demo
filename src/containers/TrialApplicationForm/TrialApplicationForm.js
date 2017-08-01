@@ -3,6 +3,8 @@ import { Field, reduxForm } from 'redux-form'
 
 import { Form, FormGroup } from 'components'
 
+import './style.css'
+
 const TrialApplicationForm = ({ handleSubmit }) =>
   <Form onSubmit={handleSubmit}>
     <Field

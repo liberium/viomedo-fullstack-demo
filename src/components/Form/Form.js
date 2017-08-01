@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './style.sass'
+import './style.css'
 
 const Form = ({ children, ...rest }) =>
   <form className="form" {...rest}>
