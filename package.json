@@ -29,6 +29,8 @@
     "husky": "^0.14.3",
     "jest": "20.0.4",
     "lint-staged": "^4.0.2",
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.0.2",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.0.0",
     "postcss-loader": "2.0.6",
@@ -50,10 +52,13 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "yarn run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "node ./scripts/start.js",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "yarn run build-css && node ./scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,scss}": [
