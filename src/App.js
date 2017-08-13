@@ -8,7 +8,9 @@ import './App.css'
 
 const App = () =>
   <Provider store={store}>
-    <TrialApplicationForm onSubmit={values => console.log(values)} />
+    <main id="App">
+      <TrialApplicationForm id="App" onSubmit={values => console.log(values)} />
+    </main>
   </Provider>
 
 export default App

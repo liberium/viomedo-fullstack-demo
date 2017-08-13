@@ -6,7 +6,7 @@ import { Form, FormGroup } from 'components'
 import './style.css'
 
 const TrialApplicationForm = ({ handleSubmit }) =>
-  <Form onSubmit={handleSubmit}>
+  <Form id="trial-application-form" onSubmit={handleSubmit}>
     <Field
       name="firstName"
       label="First Name"
