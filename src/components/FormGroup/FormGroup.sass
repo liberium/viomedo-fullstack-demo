@@ -1,0 +1,30 @@
+p.form-group
+  text-align: center
+  min-width: 270px
+
+  label
+    display: inline-block
+    width: 6em
+    text-align: right
+
+    &.required
+      &:after
+        content: '*'
+        color: red
+
+    &.for-checkbox
+      width: auto
+
+  input
+    display: inline-block
+    margin: 0 10px
+    width: 140px
+
+    &[type='checkbox']
+      position: relative
+      float: left
+      left: 28px
+      top: 2px
+      margin: 0
+      width: auto
+      border: none

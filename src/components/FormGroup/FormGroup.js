@@ -1,11 +1,17 @@
 import React from 'react'
 
-const FormGroup = ({ input, label, type }) =>
-  <div>
-    <label>
-      {label}
-      <input {...input} type={type} />
-    </label>
-  </div>
+import './FormGroup.css'
+
+const FormGroup = ({ input, label, id, required, type }) =>
+  <p className="form-group">
+    {type === 'checkbox'
+      ? <label htmlFor={id} className="for-checkbox">
+          {label}
+        </label>
+      : <label htmlFor={id} className={required ? 'required' : null}>
+          {label}
+        </label>}
+    <input {...input} id={id} type={type} />
+  </p>
 
 export default FormGroup
