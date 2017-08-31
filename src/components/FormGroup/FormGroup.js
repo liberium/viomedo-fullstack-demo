@@ -2,7 +2,14 @@ import React from 'react'
 
 import './FormGroup.css'
 
-const FormGroup = ({ input, label, id, required, type }) =>
+const FormGroup = ({
+  input,
+  label,
+  id,
+  required,
+  type,
+  meta: { touched, error },
+}) =>
   <p className="form-group">
     {type === 'checkbox'
       ? <label htmlFor={id} className="for-checkbox">
@@ -12,6 +19,11 @@ const FormGroup = ({ input, label, id, required, type }) =>
           {label}
         </label>}
     <input {...input} id={id} type={type} />
+    {touched &&
+      error &&
+      <span>
+        {error}
+      </span>}
   </p>
 
 export default FormGroup
