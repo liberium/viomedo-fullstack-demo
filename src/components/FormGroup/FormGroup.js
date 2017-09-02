@@ -1,29 +1,39 @@
 import React from 'react'
 
+import { Input, Checkbox, Select } from 'components'
+
 import './FormGroup.css'
 
-const FormGroup = ({
-  input,
-  label,
-  id,
-  required,
-  type,
-  meta: { touched, error },
-}) =>
-  <p className="form-group">
-    {type === 'checkbox'
-      ? <label htmlFor={id} className="for-checkbox">
-          {label}
-        </label>
-      : <label htmlFor={id} className={required ? 'required' : null}>
-          {label}
-        </label>}
-    <input {...input} id={id} type={type} />
-    {touched &&
-      error &&
-      <span>
-        {error}
-      </span>}
-  </p>
+const FormGroup = ({ type, input, meta: { touched, error }, ...rest }) => {
+  let inputElement
+  const inputProps = { type, ...input, ...rest }
+  switch (type) {
+    case 'checkbox':
+      inputElement = <Checkbox {...inputProps} />
+      break
+    case 'select':
+      inputElement = <Select {...inputProps} />
+      break
+    case 'text':
+    case 'number':
+    case 'email':
+    case 'tel':
+      inputElement = <Input {...inputProps} />
+      break
+    default:
+      throw new Error(`Unknown input type '${type}'`)
+  }
+
+  return (
+    <p className="form-group">
+      {inputElement}
+      {touched &&
+        error &&
+        <span>
+          {error}
+        </span>}
+    </p>
+  )
+}
 
 export default FormGroup

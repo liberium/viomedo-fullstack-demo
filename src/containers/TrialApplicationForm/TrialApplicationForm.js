@@ -11,7 +11,6 @@ const TrialApplicationForm = ({ handleSubmit }) =>
     <Field
       name="firstName"
       label="First Name"
-      id="first_name"
       type="text"
       required
       component={FormGroup}
@@ -19,7 +18,6 @@ const TrialApplicationForm = ({ handleSubmit }) =>
     <Field
       name="lastName"
       label="Last Name"
-      id="last_name"
       type="text"
       required
       component={FormGroup}
@@ -27,7 +25,6 @@ const TrialApplicationForm = ({ handleSubmit }) =>
     <Field
       name="email"
       label="Email"
-      id="email"
       type="email"
       required
       component={FormGroup}
@@ -35,7 +32,6 @@ const TrialApplicationForm = ({ handleSubmit }) =>
     <Field
       name="gender"
       label="Gender"
-      id="gender"
       type="text"
       required
       component={FormGroup}
@@ -43,7 +39,6 @@ const TrialApplicationForm = ({ handleSubmit }) =>
     <Field
       name="age"
       label="Age"
-      id="age"
       type="number"
       required
       component={FormGroup}
@@ -51,15 +46,13 @@ const TrialApplicationForm = ({ handleSubmit }) =>
     <Field
       name="phone"
       label="Phone"
-      id="phone"
-      type="text"
+      type="tel"
       required
       component={FormGroup}
     />
     <Field
       name="zip"
       label="Zip Code"
-      id="zip"
       type="text"
       required
       component={FormGroup}
@@ -67,7 +60,6 @@ const TrialApplicationForm = ({ handleSubmit }) =>
     <Field
       name="termsAccepted"
       label="I accept the terms of use."
-      id="terms_accepted"
       type="checkbox"
       component={FormGroup}
     />
