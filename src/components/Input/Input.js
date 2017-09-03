@@ -1,9 +1,11 @@
 import React from 'react'
 
 const Input = ({ required, label, ...inputProps }) =>
-  <label className={required ? 'input required' : 'input'}>
-    {label}
-    <input {...inputProps} />
-  </label>
+  <div className="Input">
+    <label className={required ? 'required' : null}>
+      {label}
+      <input {...inputProps} />
+    </label>
+  </div>
 
 export default Input
