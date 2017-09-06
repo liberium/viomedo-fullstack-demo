@@ -7,6 +7,9 @@ import './FormGroup.css'
 const FormGroup = ({ type, input, meta: { touched, error }, ...rest }) => {
   let inputElement
   const inputProps = { type, ...input, ...rest }
+
+  if (touched && error) inputProps.errorMsg = error
+
   switch (type) {
     case 'checkbox':
       inputElement = <Checkbox {...inputProps} />
@@ -27,11 +30,6 @@ const FormGroup = ({ type, input, meta: { touched, error }, ...rest }) => {
   return (
     <p className="form-group">
       {inputElement}
-      {touched &&
-        error &&
-        <span>
-          {error}
-        </span>}
     </p>
   )
 }

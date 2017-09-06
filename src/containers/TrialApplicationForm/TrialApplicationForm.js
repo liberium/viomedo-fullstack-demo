@@ -2,12 +2,12 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { validate as isEmail } from 'email-validator'
 
-import { Form, FormGroup } from 'components'
+import { Form, FormGroup, SubmitButton } from 'components'
 
 import './TrialApplicationForm.css'
 
 const TrialApplicationForm = ({ handleSubmit }) =>
-  <Form id="trial-application-form" onSubmit={handleSubmit}>
+  <Form className="TrialApplicationForm" onSubmit={handleSubmit}>
     <Field
       name="firstName"
       label="First Name"
@@ -63,7 +63,7 @@ const TrialApplicationForm = ({ handleSubmit }) =>
       type="checkbox"
       component={FormGroup}
     />
-    <button type="submit">Submit</button>
+    <SubmitButton />
   </Form>
 
 const validate = values => {

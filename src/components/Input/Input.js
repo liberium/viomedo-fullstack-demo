@@ -1,10 +1,16 @@
 import React from 'react'
 
-const Input = ({ required, label, ...inputProps }) =>
+import './Input.css'
+
+const Input = ({ required, label, errorMsg, ...inputProps }) =>
   <div className="Input">
     <label className={required ? 'required' : null}>
       {label}
-      <input {...inputProps} />
+      <span className="asterisk">*</span>
+      <span className="error-message">
+        {errorMsg && errorMsg}
+      </span>
+      <input {...inputProps} className={errorMsg ? 'has-error' : null} />
     </label>
   </div>
 
